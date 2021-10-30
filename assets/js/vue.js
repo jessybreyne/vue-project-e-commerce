@@ -19,8 +19,15 @@ const Home = {
     name: 'Home',
     data: () => {
         return {
-            products
+            products,
+            searchKey: ''
         }
+    },
+    computed: {
+
+    },
+    methodes: {
+
     }
 }
 
