@@ -78,6 +78,8 @@
                   type="checkbox"
                   name="checkbox"
                   v-bind:id="product.id"
+                  :value=product.id
+                  v-model="liked"
                 />
                 <label v-bind:for="product.id">
                   <i class="fas fa-heart"></i>
