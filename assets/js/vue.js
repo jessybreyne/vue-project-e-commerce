@@ -30,6 +30,16 @@ const Home = {
                 return product.description.toLowerCase().includes(this.searchKey.toLowerCase());
             })
         }
+    },
+    methods: {
+        setLikeCookie(){
+            console.log("test");
+            document.addEventListener('input', () => {
+                setTimeout(() => {
+                    $cookies.set('like', JSON.stringify(this.liked))
+                }, 300);
+            })
+        }
     }
 }
 

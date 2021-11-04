@@ -80,6 +80,7 @@
                   v-bind:id="product.id"
                   :value=product.id
                   v-model="liked"
+                  @click="setLikeCookie()"
                 />
                 <label v-bind:for="product.id">
                   <i class="fas fa-heart"></i>
@@ -111,6 +112,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="https://unpkg.com/vue-cookies@1.7.4/vue-cookies.js"></script>
   <script src="./assets/js/vue.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
