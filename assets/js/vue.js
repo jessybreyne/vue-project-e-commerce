@@ -53,7 +53,8 @@ const Home = {
         return {
             products,
             searchKey: '',
-            liked: []
+            liked: [],
+            cart: []
         }
     },
     computed: {
@@ -74,6 +75,21 @@ const Home = {
                     $cookies.set('like', JSON.stringify(this.liked))
                 }, 300);
             })
+        },
+        addToCart(product){
+            // check if already in array
+            for (let i = 0; i < this.cart.length; i++){
+                if (this.cart[i].id === product.id) {
+                    return this.cart[i].quantity++;
+                }
+            }
+            this.cart.push({
+                id: product.id,
+                img: product.img,
+                description: product.description,
+                price: product.price,
+                quantity: 1
+            });
         }
     },
     mounted: () => {
