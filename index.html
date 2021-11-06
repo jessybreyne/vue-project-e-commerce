@@ -105,7 +105,7 @@
           <h2>Panier</h2>
           <div class="item-group">
 
-            <div v-for="product in cart" class="item">
+            <div v-for="product, id in cart" v-bind:key="product.id" class="item">
 
               <div class="img-container">
                 <img v-bind:src="product.img" alt="Produit">
@@ -119,18 +119,17 @@
               <div class="item-quantity">
                 <h6>quantité : {{ product.quantity }}</h6>
                 <div class="cart-icons">
-                  <button>
+                  <button v-on:click="cartPlusOne(product)">
                     <i class="fa fa-plus"></i>
                   </button>
-                  <button>
+                  <button v-on:click="cartMinusOne(product, id)">
                     <i class="fa fa-minus"></i>
                   </button>
-                  <button>
+                  <button @click="cartRemoveItem(id)">
                     <i class="fa fa-trash"></i>
                   </button>
                 </div>
               </div>
-
 
             </div>
           </div>

@@ -90,6 +90,19 @@ const Home = {
                 price: product.price,
                 quantity: 1
             });
+        },
+        cartPlusOne(product){
+            product.quantity = product.quantity + 1;
+        },
+        cartRemoveItem(id){
+            this.$delete(this.cart, id);
+        },
+        cartMinusOne(product, id){
+            if(product.quantity==1) {
+                this.cartRemoveItem(id);
+            } else {
+                product.quantity = product.quantity - 1;
+            }
         }
     },
     mounted: () => {
